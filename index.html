@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>三条口播文案 - 起号专用</title>
+<title>口播文案库 - 起号专用</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
@@ -30,6 +30,33 @@ body {
 .header p {
   font-size: 13px;
   color: #888;
+}
+.date-section {
+  margin-bottom: 24px;
+}
+.date-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #667eea;
+}
+.date-header .date-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: #667eea;
+  white-space: nowrap;
+}
+.date-header .date-line {
+  flex: 1;
+  height: 1px;
+  background: #2a2a3e;
+}
+.date-header .script-count {
+  font-size: 11px;
+  color: #888;
+  white-space: nowrap;
 }
 .script-card {
   background: #1a1a2e;
@@ -109,11 +136,6 @@ body {
   font-size: 12px;
   font-weight: 600;
 }
-.copy-btn .hint {
-  font-size: 11px;
-  color: #666;
-  margin-top: 2px;
-}
 .tags-row {
   display: flex;
   flex-wrap: wrap;
@@ -140,53 +162,10 @@ body {
   background: #1a2e1a;
   color: #4ade80;
 }
-.full-text-btn {
-  display: block;
-  width: 100%;
-  padding: 14px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  margin-top: 14px;
-  transition: all 0.2s;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
-  text-align: center;
-}
-.full-text-btn:active {
-  transform: scale(0.97);
-  opacity: 0.9;
-}
-.full-text-btn.copied {
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-}
 .divider {
   height: 1px;
   background: #2a2a3e;
   margin: 14px 0;
-}
-.platform-tabs {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 8px;
-}
-.platform-tab {
-  flex: 1;
-  padding: 6px 0;
-  text-align: center;
-  font-size: 11px;
-  color: #888;
-  background: #252540;
-  border-radius: 6px;
-  border: 1px solid #3a3a55;
-}
-.platform-tab.active {
-  color: #667eea;
-  border-color: #667eea;
 }
 .tip-box {
   background: #1e1e35;
@@ -212,22 +191,30 @@ body {
 <body>
 
 <div class="header">
-  <h1>五条口播文案</h1>
+  <h1>口播文案库</h1>
   <p>起号专用 · 点击任意内容即可复制</p>
 </div>
 
 <div class="tip-box">
-  <strong>使用说明：</strong>点击任意标题、正文、标签即可复制到剪贴板。封面标题和副标题均不超过6个字。发布前请检查抖音标题≤30字、小红书标题≤20字。
+  <strong>使用说明：</strong>按日期分组，每天写的文案单独一个区块。点击任意标题、正文、标签即可复制到剪贴板。封面标题和副标题均不超过6个字。发布前请检查抖音标题≤30字、小红书标题≤20字。
 </div>
 
-<!-- ==================== 文案一 ==================== -->
+<!-- ==================== 2026.7.20 ==================== -->
+<div class="date-section">
+  <div class="date-header">
+    <span class="date-text">2026.7.20</span>
+    <span class="date-line"></span>
+    <span class="script-count">3条</span>
+  </div>
+
+<!-- 文案一 -->
 <div class="script-card">
   <div class="script-num">文案一</div>
   <div class="script-title">你月薪1万，你老板可能比你穷</div>
   <div class="script-formula">悬念反转式 · 创业者人间真实 · 约65秒</div>
 
   <div class="field-group">
-    <div class="field-label"><span class="icon">️</span> 封面主标题（≤6字）</div>
+    <div class="field-label"><span class="icon">🖼️</span> 封面主标题（≤6字）</div>
     <button class="copy-btn" onclick="copyText(this, '你月薪1万')">你月薪1万</button>
   </div>
 
@@ -239,7 +226,7 @@ body {
   <div class="divider"></div>
 
   <div class="field-group">
-    <div class="field-label"><span class="icon"></span> 抖音标题（≤30字）</div>
+    <div class="field-label"><span class="icon">📱</span> 抖音标题（≤30字）</div>
     <button class="copy-btn" onclick="copyText(this, '你月薪1万，你老板可能比你穷')">你月薪1万，你老板可能比你穷</button>
   </div>
 
@@ -249,7 +236,7 @@ body {
   </div>
 
   <div class="field-group">
-    <div class="field-label"><span class="icon">📱</span> 小红书标题（≤20字）</div>
+    <div class="field-label"><span class="icon"></span> 小红书标题（≤20字）</div>
     <button class="copy-btn" onclick="copyText(this, '老板的工资单比员工还难看')">老板的工资单比员工还难看</button>
   </div>
 
@@ -267,7 +254,7 @@ body {
   </div>
 
   <div class="field-group" style="margin-top:10px">
-    <div class="field-label"><span class="icon">️</span> 一键复制全部标签</div>
+    <div class="field-label"><span class="icon">🏷️</span> 一键复制全部标签</div>
     <button class="copy-btn" onclick="copyText(this, '#创业 #老板 #赚钱 #发工资 #创业成本')">#创业 #老板 #赚钱 #发工资 #创业成本</button>
   </div>
 
@@ -314,14 +301,14 @@ body {
   </div>
 </div>
 
-<!-- ==================== 文案二 ==================== -->
+<!-- 文案二 -->
 <div class="script-card">
   <div class="script-num">文案二</div>
   <div class="script-title">有一种老板，深夜一个人坐在办公室</div>
   <div class="script-formula">身份认同式 · 创业者人间真实 · 约60秒</div>
 
   <div class="field-group">
-    <div class="field-label"><span class="icon">🖼️</span> 封面主标题（≤6字）</div>
+    <div class="field-label"><span class="icon">️</span> 封面主标题（≤6字）</div>
     <button class="copy-btn" onclick="copyText(this, '有一种老板')">有一种老板</button>
   </div>
 
@@ -409,7 +396,7 @@ body {
   </div>
 </div>
 
-<!-- ==================== 文案三 ==================== -->
+<!-- 文案三 -->
 <div class="script-card">
   <div class="script-num">文案三</div>
   <div class="script-title">8万块广告费，一个客户没来</div>
@@ -505,11 +492,21 @@ body {
   </div>
 </div>
 
-<!-- ==================== 文案四 ==================== -->
+</div><!-- /date-section 7.20 -->
+
+<!-- ==================== 2026.7.21 ==================== -->
+<div class="date-section">
+  <div class="date-header">
+    <span class="date-text">2026.7.21</span>
+    <span class="date-line"></span>
+    <span class="script-count">2条</span>
+  </div>
+
+<!-- 文案一 -->
 <div class="script-card">
-  <div class="script-num">文案四</div>
+  <div class="script-num">文案一</div>
   <div class="script-title">获客逻辑变了</div>
-  <div class="script-subtitle">老板必看</div>
+  <div class="script-formula">悬念反转式+认知折叠式 · 历史时间线类比 · 约70秒</div>
 
   <div class="field-group">
     <div class="field-label"><span class="icon">🖼️</span> 封面主标题（≤6字）</div>
@@ -521,31 +518,37 @@ body {
     <button class="copy-btn" onclick="copyText(this, '老板必看')">老板必看</button>
   </div>
 
+  <div class="divider"></div>
+
   <div class="field-group">
     <div class="field-label"><span class="icon">📱</span> 抖音标题（≤30字）</div>
     <button class="copy-btn" onclick="copyText(this, '10年前砸钱买客户，现在让客户找你，获客逻辑变了')">10年前砸钱买客户，现在让客户找你，获客逻辑变了</button>
   </div>
 
   <div class="field-group">
-    <div class="field-label"><span class="icon">📱</span> 视频号标题</div>
+    <div class="field-label"><span class="icon"></span> 视频号标题</div>
     <button class="copy-btn" onclick="copyText(this, '从竞价到投流到内容获客，老板的获客方式变了三次，每一次都是重新洗牌')">从竞价到投流到内容获客，老板的获客方式变了三次，每一次都是重新洗牌</button>
   </div>
 
   <div class="field-group">
-    <div class="field-label"><span class="icon"></span> 小红书标题（≤20字）</div>
+    <div class="field-label"><span class="icon">📱</span> 小红书标题（≤20字）</div>
     <button class="copy-btn" onclick="copyText(this, '8万广告费只来3个客户，我悟了')">8万广告费只来3个客户，我悟了</button>
   </div>
 
-  <div class="field-group">
-    <div class="field-label"><span class="icon">️</span> 标签（5个，点击单个复制）</div>
-    <button class="copy-tag-btn" onclick="copyTag(this, '#老板思维')">#老板思维</button>
-    <button class="copy-tag-btn" onclick="copyTag(this, '#创业')">#创业</button>
-    <button class="copy-tag-btn" onclick="copyTag(this, '#获客')">#获客</button>
-    <button class="copy-tag-btn" onclick="copyTag(this, '#AI营销')">#AI营销</button>
-    <button class="copy-tag-btn" onclick="copyTag(this, '#商业认知')">#商业认知</button>
-  </div>
+  <div class="divider"></div>
 
   <div class="field-group">
+    <div class="field-label"><span class="icon">🏷️</span> 标签（5个，点击单个复制）</div>
+    <div class="tags-row">
+      <button class="tag-btn" onclick="copyTag(this, '#老板思维')">#老板思维</button>
+      <button class="tag-btn" onclick="copyTag(this, '#创业')">#创业</button>
+      <button class="tag-btn" onclick="copyTag(this, '#获客')">#获客</button>
+      <button class="tag-btn" onclick="copyTag(this, '#AI营销')">#AI营销</button>
+      <button class="tag-btn" onclick="copyTag(this, '#商业认知')">#商业认知</button>
+    </div>
+  </div>
+
+  <div class="field-group" style="margin-top:10px">
     <div class="field-label"><span class="icon">🏷️</span> 一键复制全部标签</div>
     <button class="copy-btn" onclick="copyText(this, '#老板思维 #创业 #获客 #AI营销 #商业认知')">#老板思维 #创业 #获客 #AI营销 #商业认知</button>
   </div>
@@ -623,11 +626,11 @@ AI才会推荐你。
   </div>
 </div>
 
-<!-- ==================== 文案五 ==================== -->
+<!-- 文案二 -->
 <div class="script-card">
-  <div class="script-num">文案五</div>
+  <div class="script-num">文案二</div>
   <div class="script-title">老板拍视频开场白</div>
-  <div class="script-subtitle">6个爆款钩子</div>
+  <div class="script-formula">清单启发式 · 工具型 · 6个爆款钩子 · 约55秒</div>
 
   <div class="field-group">
     <div class="field-label"><span class="icon">🖼️</span> 封面主标题（≤6字）</div>
@@ -638,6 +641,8 @@ AI才会推荐你。
     <div class="field-label"><span class="icon">🖼️</span> 封面副标题（≤6字）</div>
     <button class="copy-btn" onclick="copyText(this, '6个爆款钩子')">6个爆款钩子</button>
   </div>
+
+  <div class="divider"></div>
 
   <div class="field-group">
     <div class="field-label"><span class="icon">📱</span> 抖音标题（≤30字）</div>
@@ -654,16 +659,20 @@ AI才会推荐你。
     <button class="copy-btn" onclick="copyText(this, '老板拍视频6个万能开头')">老板拍视频6个万能开头</button>
   </div>
 
-  <div class="field-group">
-    <div class="field-label"><span class="icon">🏷️</span> 标签（5个，点击单个复制）</div>
-    <button class="copy-tag-btn" onclick="copyTag(this, '#短视频运营')">#短视频运营</button>
-    <button class="copy-tag-btn" onclick="copyTag(this, '#老板必看')">#老板必看</button>
-    <button class="copy-tag-btn" onclick="copyTag(this, '#口播技巧')">#口播技巧</button>
-    <button class="copy-tag-btn" onclick="copyTag(this, '#创业')">#创业</button>
-    <button class="copy-tag-btn" onclick="copyTag(this, '#获客')">#获客</button>
-  </div>
+  <div class="divider"></div>
 
   <div class="field-group">
+    <div class="field-label"><span class="icon">🏷️</span> 标签（5个，点击单个复制）</div>
+    <div class="tags-row">
+      <button class="tag-btn" onclick="copyTag(this, '#短视频运营')">#短视频运营</button>
+      <button class="tag-btn" onclick="copyTag(this, '#老板必看')">#老板必看</button>
+      <button class="tag-btn" onclick="copyTag(this, '#口播技巧')">#口播技巧</button>
+      <button class="tag-btn" onclick="copyTag(this, '#创业')">#创业</button>
+      <button class="tag-btn" onclick="copyTag(this, '#获客')">#获客</button>
+    </div>
+  </div>
+
+  <div class="field-group" style="margin-top:10px">
     <div class="field-label"><span class="icon">🏷️</span> 一键复制全部标签</div>
     <button class="copy-btn" onclick="copyText(this, '#短视频运营 #老板必看 #口播技巧 #创业 #获客')">#短视频运营 #老板必看 #口播技巧 #创业 #获客</button>
   </div>
@@ -732,8 +741,10 @@ AI才会推荐你。
   </div>
 </div>
 
+</div><!-- /date-section 7.21 -->
+
 <div class="footer">
-  点击任意内容即可复制 · 2026.7.21
+  点击任意内容即可复制 · 更新于 2026.7.21
 </div>
 
 <script>
@@ -742,7 +753,6 @@ function copyText(btn, text) {
     btn.classList.add('copied');
     setTimeout(function() { btn.classList.remove('copied'); }, 1500);
   }).catch(function() {
-    // fallback for older browsers
     var ta = document.createElement('textarea');
     ta.value = text;
     ta.style.position = 'fixed';
