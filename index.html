@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>三条口播文案 - 起号专用</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: #0f0f1a;
+  color: #e0e0e0;
+  padding: 12px;
+  padding-bottom: 40px;
+  max-width: 480px;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+}
+.header {
+  text-align: center;
+  padding: 20px 0 16px;
+  border-bottom: 1px solid #2a2a3e;
+  margin-bottom: 20px;
+}
+.header h1 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.header p {
+  font-size: 13px;
+  color: #888;
+}
+.script-card {
+  background: #1a1a2e;
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 16px;
+  border: 1px solid #2a2a3e;
+}
+.script-num {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+.script-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.script-formula {
+  font-size: 12px;
+  color: #667eea;
+  margin-bottom: 14px;
+}
+.field-group {
+  margin-bottom: 12px;
+}
+.field-label {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.field-label .icon {
+  font-size: 13px;
+}
+.copy-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  background: #252540;
+  border: 1px solid #3a3a55;
+  border-radius: 10px;
+  color: #e0e0e0;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+  line-height: 1.5;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.copy-btn:active {
+  background: #303050;
+  border-color: #667eea;
+  transform: scale(0.98);
+}
+.copy-btn.copied {
+  border-color: #4ade80;
+  background: #1a2e1a;
+}
+.copy-btn.copied::after {
+  content: '✓ 已复制';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #4ade80;
+  font-size: 12px;
+  font-weight: 600;
+}
+.copy-btn .hint {
+  font-size: 11px;
+  color: #666;
+  margin-top: 2px;
+}
+.tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tag-btn {
+  padding: 6px 12px;
+  background: #252540;
+  border: 1px solid #3a3a55;
+  border-radius: 20px;
+  color: #c0c0d0;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.tag-btn:active {
+  background: #303050;
+  border-color: #667eea;
+}
+.tag-btn.copied {
+  border-color: #4ade80;
+  background: #1a2e1a;
+  color: #4ade80;
+}
+.full-text-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 14px;
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  text-align: center;
+}
+.full-text-btn:active {
+  transform: scale(0.97);
+  opacity: 0.9;
+}
+.full-text-btn.copied {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+.divider {
+  height: 1px;
+  background: #2a2a3e;
+  margin: 14px 0;
+}
+.platform-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.platform-tab {
+  flex: 1;
+  padding: 6px 0;
+  text-align: center;
+  font-size: 11px;
+  color: #888;
+  background: #252540;
+  border-radius: 6px;
+  border: 1px solid #3a3a55;
+}
+.platform-tab.active {
+  color: #667eea;
+  border-color: #667eea;
+}
+.tip-box {
+  background: #1e1e35;
+  border-left: 3px solid #667eea;
+  padding: 10px 14px;
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 16px;
+  font-size: 12px;
+  color: #aaa;
+  line-height: 1.6;
+}
+.tip-box strong {
+  color: #667eea;
+}
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 12px;
+  color: #555;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>三条口播文案</h1>
+  <p>起号专用 · 点击任意内容即可复制</p>
+</div>
+
+<div class="tip-box">
+  <strong>使用说明：</strong>点击任意标题、正文、标签即可复制到剪贴板。封面标题和副标题均不超过6个字。发布前请检查抖音标题≤30字、小红书标题≤20字。
+</div>
+
+<!-- ==================== 文案一 ==================== -->
+<div class="script-card">
+  <div class="script-num">文案一</div>
+  <div class="script-title">你月薪1万，你老板可能比你穷</div>
+  <div class="script-formula">悬念反转式 · 创业者人间真实 · 约65秒</div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">️</span> 封面主标题（≤6字）</div>
+    <button class="copy-btn" onclick="copyText(this, '你月薪1万')">你月薪1万</button>
+  </div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">🖼️</span> 封面副标题（≤6字）</div>
+    <button class="copy-btn" onclick="copyText(this, '老板比你穷')">老板比你穷</button>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon"></span> 抖音标题（≤30字）</div>
+    <button class="copy-btn" onclick="copyText(this, '你月薪1万，你老板可能比你穷')">你月薪1万，你老板可能比你穷</button>
+  </div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">📱</span> 视频号标题</div>
+    <button class="copy-btn" onclick="copyText(this, '开了公司才知道，老板可能是最穷的那个人')">开了公司才知道，老板可能是最穷的那个人</button>
+  </div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">📱</span> 小红书标题（≤20字）</div>
+    <button class="copy-btn" onclick="copyText(this, '老板的工资单比员工还难看')">老板的工资单比员工还难看</button>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">🏷️</span> 标签（5个，点击单个复制）</div>
+    <div class="tags-row">
+      <button class="tag-btn" onclick="copyTag(this, '#创业')">#创业</button>
+      <button class="tag-btn" onclick="copyTag(this, '#老板')">#老板</button>
+      <button class="tag-btn" onclick="copyTag(this, '#赚钱')">#赚钱</button>
+      <button class="tag-btn" onclick="copyTag(this, '#发工资')">#发工资</button>
+      <button class="tag-btn" onclick="copyTag(this, '#创业成本')">#创业成本</button>
+    </div>
+  </div>
+
+  <div class="field-group" style="margin-top:10px">
+    <div class="field-label"><span class="icon">️</span> 一键复制全部标签</div>
+    <button class="copy-btn" onclick="copyText(this, '#创业 #老板 #赚钱 #发工资 #创业成本')">#创业 #老板 #赚钱 #发工资 #创业成本</button>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">📝</span> 完整口播文案（约270字）</div>
+    <button class="copy-btn" style="font-size:13px;line-height:1.7" onclick="copyText(this, `你有没有算过一笔账，你老板一个月到底能拿多少钱回家？
+
+我开公司这些年，每个月最紧张的一天就是发工资。10个人的工资一发，账上直接空一半。
+
+很多人觉得老板肯定比员工有钱。但你仔细算：员工月底准时拿工资，旱涝保收。老板呢？先付房租、水电、税费，剩下的才是利润。利润还要投回去——进货、买设备、招人。到头来老板自己一个月能拿回家的，可能就几千块。
+
+我自己有段时间，给员工发完工资，自己卡里剩的还没一个员工多。
+
+但没人会跟员工说这些。员工看到的是老板开什么车、穿什么衣服，看不到的是月底账上剩多少。
+
+打工是用小时换钱，老板是用焦虑换钱。你下了班就能休息，老板下了班还在想下个月的工资从哪来。
+
+也许不是老板比你有钱，是他把大部分钱都压在了这个公司里，取不出来。`)">你有没有算过一笔账，你老板一个月到底能拿多少钱回家？
+
+我开公司这些年，每个月最紧张的一天就是发工资。10个人的工资一发，账上直接空一半。
+
+很多人觉得老板肯定比员工有钱。但你仔细算：员工月底准时拿工资，旱涝保收。老板呢？先付房租、水电、税费，剩下的才是利润。利润还要投回去——进货、买设备、招人。到头来老板自己一个月能拿回家的，可能就几千块。
+
+我自己有段时间，给员工发完工资，自己卡里剩的还没一个员工多。
+
+但没人会跟员工说这些。员工看到的是老板开什么车、穿什么衣服，看不到的是月底账上剩多少。
+
+打工是用小时换钱，老板是用焦虑换钱。你下了班就能休息，老板下了班还在想下个月的工资从哪来。
+
+也许不是老板比你有钱，是他把大部分钱都压在了这个公司里，取不出来。</button>
+  </div>
+</div>
+
+<!-- ==================== 文案二 ==================== -->
+<div class="script-card">
+  <div class="script-num">文案二</div>
+  <div class="script-title">有一种老板，深夜一个人坐在办公室</div>
+  <div class="script-formula">身份认同式 · 创业者人间真实 · 约60秒</div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">🖼️</span> 封面主标题（≤6字）</div>
+    <button class="copy-btn" onclick="copyText(this, '有一种老板')">有一种老板</button>
+  </div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">️</span> 封面副标题（≤6字）</div>
+    <button class="copy-btn" onclick="copyText(this, '深夜一个人')">深夜一个人</button>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">📱</span> 抖音标题（≤30字）</div>
+    <button class="copy-btn" onclick="copyText(this, '有一种老板，深夜一个人坐在办公室算账')">有一种老板，深夜一个人坐在办公室算账</button>
+  </div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">📱</span> 视频号标题</div>
+    <button class="copy-btn" onclick="copyText(this, '员工下班后，老板最真实的30分钟')">员工下班后，老板最真实的30分钟</button>
+  </div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">📱</span> 小红书标题（≤20字）</div>
+    <button class="copy-btn" onclick="copyText(this, '老板的深夜比打工人更难熬')">老板的深夜比打工人更难熬</button>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">🏷️</span> 标签（5个，点击单个复制）</div>
+    <div class="tags-row">
+      <button class="tag-btn" onclick="copyTag(this, '#创业')">#创业</button>
+      <button class="tag-btn" onclick="copyTag(this, '#老板')">#老板</button>
+      <button class="tag-btn" onclick="copyTag(this, '#深夜')">#深夜</button>
+      <button class="tag-btn" onclick="copyTag(this, '#坚持')">#坚持</button>
+      <button class="tag-btn" onclick="copyTag(this, '#创业者')">#创业者</button>
+    </div>
+  </div>
+
+  <div class="field-group" style="margin-top:10px">
+    <div class="field-label"><span class="icon">🏷️</span> 一键复制全部标签</div>
+    <button class="copy-btn" onclick="copyText(this, '#创业 #老板 #深夜 #坚持 #创业者')">#创业 #老板 #深夜 #坚持 #创业者</button>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">📝</span> 完整口播文案（约260字）</div>
+    <button class="copy-btn" style="font-size:13px;line-height:1.7" onclick="copyText(this, `有一种老板，每天员工下班之后，他一个人坐在办公室里，对着电脑上的表格发呆。
+
+他在算什么？算这个月的收入，够不够发下个月的工资。
+
+如果你也是，那你一定懂那种感觉——白天在员工面前信心满满，好像什么都安排好了。晚上一个人坐下来，才发现账上的数字，刚好只够发工资，多一分都没有。
+
+我创业这些年，最怕的就是每个月那几天。不是怕没钱，是怕对不起跟着我的人。他们把每个月的生活指望放在你身上，你连跟他们说"这个月有点难"都开不了口。
+
+员工永远不知道，老板每个月发工资之前，要在心里算多少遍。
+
+后来我想明白一件事：创业这件事，表面上是你在养公司，实际上是公司在养你心里的一个念头——那个当初说"我要做点自己的事"的念头。
+
+只要这个念头还在，再难也能撑过去。`)">有一种老板，每天员工下班之后，他一个人坐在办公室里，对着电脑上的表格发呆。
+
+他在算什么？算这个月的收入，够不够发下个月的工资。
+
+如果你也是，那你一定懂那种感觉——白天在员工面前信心满满，好像什么都安排好了。晚上一个人坐下来，才发现账上的数字，刚好只够发工资，多一分都没有。
+
+我创业这些年，最怕的就是每个月那几天。不是怕没钱，是怕对不起跟着我的人。他们把每个月的生活指望放在你身上，你连跟他们说"这个月有点难"都开不了口。
+
+员工永远不知道，老板每个月发工资之前，要在心里算多少遍。
+
+后来我想明白一件事：创业这件事，表面上是你在养公司，实际上是公司在养你心里的一个念头——那个当初说"我要做点自己的事"的念头。
+
+只要这个念头还在，再难也能撑过去。</button>
+  </div>
+</div>
+
+<!-- ==================== 文案三 ==================== -->
+<div class="script-card">
+  <div class="script-num">文案三</div>
+  <div class="script-title">8万块广告费，一个客户没来</div>
+  <div class="script-formula">痛点共鸣式 · 踩坑故事 · 约65秒</div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">🖼️</span> 封面主标题（≤6字）</div>
+    <button class="copy-btn" onclick="copyText(this, '8万广告费')">8万广告费</button>
+  </div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">🖼️</span> 封面副标题（≤6字）</div>
+    <button class="copy-btn" onclick="copyText(this, '一个没来')">一个没来</button>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">📱</span> 抖音标题（≤30字）</div>
+    <button class="copy-btn" onclick="copyText(this, '8万块广告费一个客户没来，最冤的一笔钱')">8万块广告费一个客户没来，最冤的一笔钱</button>
+  </div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">📱</span> 视频号标题</div>
+    <button class="copy-btn" onclick="copyText(this, '花了8万做推广只来3个客户，后来我找到了真正有效的方法')">花了8万做推广只来3个客户，后来我找到了真正有效的方法</button>
+  </div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">📱</span> 小红书标题（≤20字）</div>
+    <button class="copy-btn" onclick="copyText(this, '8万广告费打了水漂')">8万广告费打了水漂</button>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">🏷️</span> 标签（5个，点击单个复制）</div>
+    <div class="tags-row">
+      <button class="tag-btn" onclick="copyTag(this, '#创业')">#创业</button>
+      <button class="tag-btn" onclick="copyTag(this, '#获客')">#获客</button>
+      <button class="tag-btn" onclick="copyTag(this, '#踩坑')">#踩坑</button>
+      <button class="tag-btn" onclick="copyTag(this, '#广告费')">#广告费</button>
+      <button class="tag-btn" onclick="copyTag(this, '#短视频获客')">#短视频获客</button>
+    </div>
+  </div>
+
+  <div class="field-group" style="margin-top:10px">
+    <div class="field-label"><span class="icon">🏷️</span> 一键复制全部标签</div>
+    <button class="copy-btn" onclick="copyText(this, '#创业 #获客 #踩坑 #广告费 #短视频获客')">#创业 #获客 #踩坑 #广告费 #短视频获客</button>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="field-group">
+    <div class="field-label"><span class="icon">📝</span> 完整口播文案（约280字）</div>
+    <button class="copy-btn" style="font-size:13px;line-height:1.7" onclick="copyText(this, `你有没有试过，花了一大笔钱做推广，结果一个客户都没来？
+
+2024年我投了8万块广告，最后来了3个客户。算下来一个客资将近3000块。
+
+那段时间每天看数据，心都在滴血。几万块投进去，一个泡都不冒。
+
+后来我复盘了一遍，发现一个很残酷的事实：我把获客当成了一次性买卖——砸钱买流量，流量来了接不住，钱就白花了。
+
+但真正有效的获客，不是靠砸钱，是靠你持续输出内容，让有需求的人自己找过来。
+
+我现在每天发一条视频，不用投一分钱广告，客户主动加微信。
+
+这条路慢，不是今天发明天就有结果。但一旦走通了，你就再也不用花那种冤枉钱了。
+
+我自己是从1200块一个客资，走到现在几乎零成本获客的。中间踩的坑，够写一本书了。`)">你有没有试过，花了一大笔钱做推广，结果一个客户都没来？
+
+2024年我投了8万块广告，最后来了3个客户。算下来一个客资将近3000块。
+
+那段时间每天看数据，心都在滴血。几万块投进去，一个泡都不冒。
+
+后来我复盘了一遍，发现一个很残酷的事实：我把获客当成了一次性买卖——砸钱买流量，流量来了接不住，钱就白花了。
+
+但真正有效的获客，不是靠砸钱，是靠你持续输出内容，让有需求的人自己找过来。
+
+我现在每天发一条视频，不用投一分钱广告，客户主动加微信。
+
+这条路慢，不是今天发明天就有结果。但一旦走通了，你就再也不用花那种冤枉钱了。
+
+我自己是从1200块一个客资，走到现在几乎零成本获客的。中间踩的坑，够写一本书了。</button>
+  </div>
+</div>
+
+<div class="footer">
+  点击任意内容即可复制 · 2026.7.20
+</div>
+
+<script>
+function copyText(btn, text) {
+  navigator.clipboard.writeText(text).then(function() {
+    btn.classList.add('copied');
+    setTimeout(function() { btn.classList.remove('copied'); }, 1500);
+  }).catch(function() {
+    // fallback for older browsers
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.classList.add('copied');
+    setTimeout(function() { btn.classList.remove('copied'); }, 1500);
+  });
+}
+
+function copyTag(btn, text) {
+  navigator.clipboard.writeText(text).then(function() {
+    btn.classList.add('copied');
+    setTimeout(function() { btn.classList.remove('copied'); }, 1200);
+  }).catch(function() {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.classList.add('copied');
+    setTimeout(function() { btn.classList.remove('copied'); }, 1200);
+  });
+}
+</script>
+
+</body>
+</html>
