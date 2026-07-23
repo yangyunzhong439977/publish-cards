@@ -218,29 +218,29 @@ body {
 
   <div class="field-group">
     <div class="field-label"><span class="icon">🖼️</span> 封面主标题（≤6字）</div>
-    <button class="copy-btn" onclick="copyText(this, '花8万')">花8万</button>
+    <button class="copy-btn" data-copy="花8万">花8万</button>
   </div>
 
   <div class="field-group">
     <div class="field-label"><span class="icon">🖼️</span> 封面副标题（≤6字）</div>
-    <button class="copy-btn" onclick="copyText(this, '买了个教训')">买了个教训</button>
+    <button class="copy-btn" data-copy="买了个教训">买了个教训</button>
   </div>
 
   <div class="divider"></div>
 
   <div class="field-group">
     <div class="field-label"><span class="icon">📱</span> 抖音标题（≤30字）</div>
-    <button class="copy-btn" onclick="copyText(this, '花了8万广告费一个客户没来，后来我换了一个不花钱的方法')">花了8万广告费一个客户没来，后来我换了一个不花钱的方法</button>
+    <button class="copy-btn" data-copy="花了8万广告费一个客户没来，后来我换了一个不花钱的方法">花了8万广告费一个客户没来，后来我换了一个不花钱的方法</button>
   </div>
 
   <div class="field-group">
     <div class="field-label"><span class="icon">📱</span> 视频号标题</div>
-    <button class="copy-btn" onclick="copyText(this, '花了8万广告费一个客户没来，后来我换了一个不花钱的方法')">花了8万广告费一个客户没来，后来我换了一个不花钱的方法</button>
+    <button class="copy-btn" data-copy="花了8万广告费一个客户没来，后来我换了一个不花钱的方法">花了8万广告费一个客户没来，后来我换了一个不花钱的方法</button>
   </div>
 
   <div class="field-group">
     <div class="field-label"><span class="icon">📱</span> 小红书标题（≤20字）</div>
-    <button class="copy-btn" onclick="copyText(this, '花8万广告费0客户，我换了个方法')">花8万广告费0客户，我换了个方法</button>
+    <button class="copy-btn" data-copy="花8万广告费0客户，我换了个方法">花8万广告费0客户，我换了个方法</button>
   </div>
 
   <div class="divider"></div>
@@ -248,24 +248,65 @@ body {
   <div class="field-group">
     <div class="field-label"><span class="icon">🏷️</span> 标签（5个，点击单个复制）</div>
     <div class="tags-row">
-      <button class="tag-btn" onclick="copyTag(this, '#获客')">#获客</button>
-      <button class="tag-btn" onclick="copyTag(this, '#老板创业')">#老板创业</button>
-      <button class="tag-btn" onclick="copyTag(this, '#广告费')">#广告费</button>
-      <button class="tag-btn" onclick="copyTag(this, '#短视频获客')">#短视频获客</button>
-      <button class="tag-btn" onclick="copyTag(this, '#实体店')">#实体店</button>
+      <button class="tag-btn" data-copy="#获客">#获客</button>
+      <button class="tag-btn" data-copy="#老板创业">#老板创业</button>
+      <button class="tag-btn" data-copy="#广告费">#广告费</button>
+      <button class="tag-btn" data-copy="#短视频获客">#短视频获客</button>
+      <button class="tag-btn" data-copy="#实体店">#实体店</button>
     </div>
   </div>
 
   <div class="field-group" style="margin-top:10px">
     <div class="field-label"><span class="icon">🏷️</span> 一键复制全部标签</div>
-    <button class="copy-btn" onclick="copyText(this, '#获客 #老板创业 #广告费 #短视频获客 #实体店')">#获客 #老板创业 #广告费 #短视频获客 #实体店</button>
+    <button class="copy-btn" data-copy="#获客 #老板创业 #广告费 #短视频获客 #实体店">#获客 #老板创业 #广告费 #短视频获客 #实体店</button>
   </div>
 
   <div class="divider"></div>
 
   <div class="field-group">
     <div class="field-label"><span class="icon">📝</span> 完整口播文案（提词器格式）</div>
-    <button class="copy-btn" style="font-size:13px;line-height:1.8;white-space:pre-line;text-align:left" onclick="copyText(this, `我花了8万块广告费。\n一个客户没来。\n\n不是没投，\n投了电梯广告、传单、朋友圈推广。\n钱花出去了，\n水花都没有。\n\n后来一个同行跟我说：\n"你还在花钱买客户？\n我早就不投广告了。"\n\n他每天就拍一条短视频，\n手机拍，不剪辑，\n就讲自己怎么帮客户解决问题。\n\n三个月，\n自然流量来了两百多个咨询。\n\n我当时不信。\n但我已经亏了8万了，\n还有什么好怕的？\n\n试了。\n\n第一条视频，\n播放量不到200。\n第二条，\n500。\n第十条的时候，\n有人私信问我怎么合作。\n\n现在回头看，\n那8万块不是亏了，\n是买了个教训：\n\n获客不是花钱的事，\n是说对话的事。\n\n你现在还在花钱做推广吗？\n评论区聊聊，\n你花了多少，来了几个客户？`)">我花了8万块广告费。
+    <button class="copy-btn" style="font-size:13px;line-height:1.8;white-space:pre-line;text-align:left" data-copy="我花了8万块广告费。
+一个客户没来。
+
+不是没投，
+投了电梯广告、传单、朋友圈推广。
+钱花出去了，
+水花都没有。
+
+后来一个同行跟我说：
+&quot;你还在花钱买客户？
+我早就不投广告了。&quot;
+
+他每天就拍一条短视频，
+手机拍，不剪辑，
+就讲自己怎么帮客户解决问题。
+
+三个月，
+自然流量来了两百多个咨询。
+
+我当时不信。
+但我已经亏了8万了，
+还有什么好怕的？
+
+试了。
+
+第一条视频，
+播放量不到200。
+第二条，
+500。
+第十条的时候，
+有人私信问我怎么合作。
+
+现在回头看，
+那8万块不是亏了，
+是买了个教训：
+
+获客不是花钱的事，
+是说对话的事。
+
+你现在还在花钱做推广吗？
+评论区聊聊，
+你花了多少，来了几个客户？">我花了8万块广告费。
 一个客户没来。
 
 不是没投，
@@ -318,29 +359,29 @@ body {
 
   <div class="field-group">
     <div class="field-label"><span class="icon">🖼️</span> 封面主标题（≤6字）</div>
-    <button class="copy-btn" onclick="copyText(this, '凌晨两点')">凌晨两点</button>
+    <button class="copy-btn" data-copy="凌晨两点">凌晨两点</button>
   </div>
 
   <div class="field-group">
     <div class="field-label"><span class="icon">🖼️</span> 封面副标题（≤6字）</div>
-    <button class="copy-btn" onclick="copyText(this, '老板一个人')">老板一个人</button>
+    <button class="copy-btn" data-copy="老板一个人">老板一个人</button>
   </div>
 
   <div class="divider"></div>
 
   <div class="field-group">
     <div class="field-label"><span class="icon">📱</span> 抖音标题（≤30字）</div>
-    <button class="copy-btn" onclick="copyText(this, '凌晨两点还在办公室的老板，你的获客方式该换了')">凌晨两点还在办公室的老板，你的获客方式该换了</button>
+    <button class="copy-btn" data-copy="凌晨两点还在办公室的老板，你的获客方式该换了">凌晨两点还在办公室的老板，你的获客方式该换了</button>
   </div>
 
   <div class="field-group">
     <div class="field-label"><span class="icon">📱</span> 视频号标题</div>
-    <button class="copy-btn" onclick="copyText(this, '凌晨两点还在算账的老板，这条视频说给你听')">凌晨两点还在算账的老板，这条视频说给你听</button>
+    <button class="copy-btn" data-copy="凌晨两点还在算账的老板，这条视频说给你听">凌晨两点还在算账的老板，这条视频说给你听</button>
   </div>
 
   <div class="field-group">
     <div class="field-label"><span class="icon">📱</span> 小红书标题（≤20字）</div>
-    <button class="copy-btn" onclick="copyText(this, '凌晨两点还在办公室的老板，看这条')">凌晨两点还在办公室的老板，看这条</button>
+    <button class="copy-btn" data-copy="凌晨两点还在办公室的老板，看这条">凌晨两点还在办公室的老板，看这条</button>
   </div>
 
   <div class="divider"></div>
@@ -348,24 +389,71 @@ body {
   <div class="field-group">
     <div class="field-label"><span class="icon">🏷️</span> 标签（5个，点击单个复制）</div>
     <div class="tags-row">
-      <button class="tag-btn" onclick="copyTag(this, '#老板')">#老板</button>
-      <button class="tag-btn" onclick="copyTag(this, '#创业')">#创业</button>
-      <button class="tag-btn" onclick="copyTag(this, '#深夜感悟')">#深夜感悟</button>
-      <button class="tag-btn" onclick="copyTag(this, '#获客')">#获客</button>
-      <button class="tag-btn" onclick="copyTag(this, '#实体店老板')">#实体店老板</button>
+      <button class="tag-btn" data-copy="#老板">#老板</button>
+      <button class="tag-btn" data-copy="#创业">#创业</button>
+      <button class="tag-btn" data-copy="#深夜感悟">#深夜感悟</button>
+      <button class="tag-btn" data-copy="#获客">#获客</button>
+      <button class="tag-btn" data-copy="#实体店老板">#实体店老板</button>
     </div>
   </div>
 
   <div class="field-group" style="margin-top:10px">
     <div class="field-label"><span class="icon">🏷️</span> 一键复制全部标签</div>
-    <button class="copy-btn" onclick="copyText(this, '#老板 #创业 #深夜感悟 #获客 #实体店老板')">#老板 #创业 #深夜感悟 #获客 #实体店老板</button>
+    <button class="copy-btn" data-copy="#老板 #创业 #深夜感悟 #获客 #实体店老板">#老板 #创业 #深夜感悟 #获客 #实体店老板</button>
   </div>
 
   <div class="divider"></div>
 
   <div class="field-group">
     <div class="field-label"><span class="icon">📝</span> 完整口播文案（提词器格式）</div>
-    <button class="copy-btn" style="font-size:13px;line-height:1.8;white-space:pre-line;text-align:left" onclick="copyText(this, `凌晨两点，\n你一个人坐在办公室。\n\n工资要发，\n房租要交，\n孩子的学费该交了。\n\n老婆说你天天忙，\n但不知道你在忙什么。\n朋友说你当老板多好，\n但没人知道你有多难。\n\n我经历过。\n\n最焦虑的时候，\n不是没钱，\n是不知道下一个客户在哪。\n\n请了团队拍视频，\n花了五万，\n三个月，\n一个客户没来。\n\n后来我想明白一件事：\n老板做短视频，\n不是要当网红，\n是要把你的经验说出来。\n\n你怎么帮客户解决问题的，\n你怎么从0做到现在的，\n你踩过什么坑——\n\n这些，\n就是别人愿意看的内容。\n\n我现在每天一条视频，\n不投广告，\n不请团队，\n就对着手机讲。\n\n三个月，\n靠自然流量来的客户，\n比之前花8万广告费来的还多。\n\n如果你也是\n凌晨两点还在扛的老板，\n评论区打个"扛"，\n让我知道不是你一个人。`)">凌晨两点，
+    <button class="copy-btn" style="font-size:13px;line-height:1.8;white-space:pre-line;text-align:left" data-copy="凌晨两点，
+你一个人坐在办公室。
+
+工资要发，
+房租要交，
+孩子的学费该交了。
+
+老婆说你天天忙，
+但不知道你在忙什么。
+朋友说你当老板多好，
+但没人知道你有多难。
+
+我经历过。
+
+最焦虑的时候，
+不是没钱，
+是不知道下一个客户在哪。
+
+请了团队拍视频，
+花了五万，
+三个月，
+一个客户没来。
+
+后来我想明白一件事：
+老板做短视频，
+不是要当网红，
+是要把你的经验说出来。
+
+你怎么帮客户解决问题的，
+你怎么从0做到现在的，
+你踩过什么坑——
+
+这些，
+就是别人愿意看的内容。
+
+我现在每天一条视频，
+不投广告，
+不请团队，
+就对着手机讲。
+
+三个月，
+靠自然流量来的客户，
+比之前花8万广告费来的还多。
+
+如果你也是
+凌晨两点还在扛的老板，
+评论区打个&quot;扛&quot;，
+让我知道不是你一个人。">凌晨两点，
 你一个人坐在办公室。
 
 工资要发，
@@ -424,29 +512,29 @@ body {
 
   <div class="field-group">
     <div class="field-label"><span class="icon">🖼️</span> 封面主标题（≤6字）</div>
-    <button class="copy-btn" onclick="copyText(this, '一个客户')">一个客户</button>
+    <button class="copy-btn" data-copy="一个客户">一个客户</button>
   </div>
 
   <div class="field-group">
     <div class="field-label"><span class="icon">🖼️</span> 封面副标题（≤6字）</div>
-    <button class="copy-btn" onclick="copyText(this, '3块5')">3块5</button>
+    <button class="copy-btn" data-copy="3块5">3块5</button>
   </div>
 
   <div class="divider"></div>
 
   <div class="field-group">
     <div class="field-label"><span class="icon">📱</span> 抖音标题（≤30字）</div>
-    <button class="copy-btn" onclick="copyText(this, '获客成本从200降到3.5块，我做对了什么')">获客成本从200降到3.5块，我做对了什么</button>
+    <button class="copy-btn" data-copy="获客成本从200降到3.5块，我做对了什么">获客成本从200降到3.5块，我做对了什么</button>
   </div>
 
   <div class="field-group">
     <div class="field-label"><span class="icon">📱</span> 视频号标题</div>
-    <button class="copy-btn" onclick="copyText(this, '同样的客户，以前花200块，现在3块5，区别在哪')">同样的客户，以前花200块，现在3块5，区别在哪</button>
+    <button class="copy-btn" data-copy="同样的客户，以前花200块，现在3块5，区别在哪">同样的客户，以前花200块，现在3块5，区别在哪</button>
   </div>
 
   <div class="field-group">
     <div class="field-label"><span class="icon">📱</span> 小红书标题（≤20字）</div>
-    <button class="copy-btn" onclick="copyText(this, '获客成本从200降到3.5，方法分享')">获客成本从200降到3.5，方法分享</button>
+    <button class="copy-btn" data-copy="获客成本从200降到3.5，方法分享">获客成本从200降到3.5，方法分享</button>
   </div>
 
   <div class="divider"></div>
@@ -454,24 +542,77 @@ body {
   <div class="field-group">
     <div class="field-label"><span class="icon">🏷️</span> 标签（5个，点击单个复制）</div>
     <div class="tags-row">
-      <button class="tag-btn" onclick="copyTag(this, '#获客成本')">#获客成本</button>
-      <button class="tag-btn" onclick="copyTag(this, '#AI获客')">#AI获客</button>
-      <button class="tag-btn" onclick="copyTag(this, '#老板必看')">#老板必看</button>
-      <button class="tag-btn" onclick="copyTag(this, '#创业')">#创业</button>
-      <button class="tag-btn" onclick="copyTag(this, '#短视频运营')">#短视频运营</button>
+      <button class="tag-btn" data-copy="#获客成本">#获客成本</button>
+      <button class="tag-btn" data-copy="#AI获客">#AI获客</button>
+      <button class="tag-btn" data-copy="#老板必看">#老板必看</button>
+      <button class="tag-btn" data-copy="#创业">#创业</button>
+      <button class="tag-btn" data-copy="#短视频运营">#短视频运营</button>
     </div>
   </div>
 
   <div class="field-group" style="margin-top:10px">
     <div class="field-label"><span class="icon">🏷️</span> 一键复制全部标签</div>
-    <button class="copy-btn" onclick="copyText(this, '#获客成本 #AI获客 #老板必看 #创业 #短视频运营')">#获客成本 #AI获客 #老板必看 #创业 #短视频运营</button>
+    <button class="copy-btn" data-copy="#获客成本 #AI获客 #老板必看 #创业 #短视频运营">#获客成本 #AI获客 #老板必看 #创业 #短视频运营</button>
   </div>
 
   <div class="divider"></div>
 
   <div class="field-group">
     <div class="field-label"><span class="icon">📝</span> 完整口播文案（提词器格式）</div>
-    <button class="copy-btn" style="font-size:13px;line-height:1.8;white-space:pre-line;text-align:left" onclick="copyText(this, `以前获客，\n一个客户线索一两百块。\n现在呢？\n3块5。\n\n不是吹的，\n是我实测出来的。\n\n怎么做到的？\n先说说获客方式变了四次。\n\n第一阶段：\n坐店等客上门。\n零成本，\n但一天来不了几个人。\n\n第二阶段：\n花钱投广告。\n电梯、传单、朋友圈。\n一个客资一两百，\n投了8万，\n来了不到10个。\n\n第三阶段：\n自己拍短视频。\n不花钱，\n但费时间，\n一条视频拍一天。\n\n第四阶段：\n用AI做内容。\n你提供经验，\nAI帮你变成视频、变成文章、变成问答，\n分发到各个平台。\n\n成本从一两百，\n降到3块5。\n\n而且这些内容，\n今天发，\n半年后还有人看到。\n不像广告费，\n花完就没了。\n\n这就是区别。\n别人还在花200块找一个客户的时候，\n你3块5就搞定了。\n\n这个窗口期，\n知道的人还不多。\n\n想知道具体怎么做的，\n评论区扣"3块5"，\n我把方法告诉你。`)">以前获客，
+    <button class="copy-btn" style="font-size:13px;line-height:1.8;white-space:pre-line;text-align:left" data-copy="以前获客，
+一个客户线索一两百块。
+现在呢？
+3块5。
+
+不是吹的，
+是我实测出来的。
+
+怎么做到的？
+先说说获客方式变了四次。
+
+第一阶段：
+坐店等客上门。
+零成本，
+但一天来不了几个人。
+
+第二阶段：
+花钱投广告。
+电梯、传单、朋友圈。
+一个客资一两百，
+投了8万，
+来了不到10个。
+
+第三阶段：
+自己拍短视频。
+不花钱，
+但费时间，
+一条视频拍一天。
+
+第四阶段：
+用AI做内容。
+你提供经验，
+AI帮你变成视频、变成文章、变成问答，
+分发到各个平台。
+
+成本从一两百，
+降到3块5。
+
+而且这些内容，
+今天发，
+半年后还有人看到。
+不像广告费，
+花完就没了。
+
+这就是区别。
+别人还在花200块找一个客户的时候，
+你3块5就搞定了。
+
+这个窗口期，
+知道的人还不多。
+
+想知道具体怎么做的，
+评论区扣&quot;3块5&quot;，
+我把方法告诉你。">以前获客，
 一个客户线索一两百块。
 现在呢？
 3块5。
@@ -535,40 +676,39 @@ AI帮你变成视频、变成文章、变成问答，
 </div>
 
 <script>
-function copyText(btn, text) {
-  navigator.clipboard.writeText(text).then(function() {
-    btn.classList.add('copied');
-    setTimeout(function() { btn.classList.remove('copied'); }, 1500);
-  }).catch(function() {
-    var ta = document.createElement('textarea');
-    ta.value = text;
-    ta.style.position = 'fixed';
-    ta.style.opacity = '0';
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-    btn.classList.add('copied');
-    setTimeout(function() { btn.classList.remove('copied'); }, 1500);
-  });
-}
+document.addEventListener('click', function(e) {
+  var btn = e.target.closest('[data-copy]');
+  if (!btn) return;
+  var text = btn.getAttribute('data-copy');
+  if (!text) return;
 
-function copyTag(btn, text) {
-  navigator.clipboard.writeText(text).then(function() {
+  function showCopied() {
     btn.classList.add('copied');
-    setTimeout(function() { btn.classList.remove('copied'); }, 1200);
-  }).catch(function() {
-    var ta = document.createElement('textarea');
-    ta.value = text;
-    ta.style.position = 'fixed';
-    ta.style.opacity = '0';
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-    btn.classList.add('copied');
-    setTimeout(function() { btn.classList.remove('copied'); }, 1200);
-  });
+    setTimeout(function() { btn.classList.remove('copied'); }, 1500);
+  }
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(showCopied).catch(function() {
+      fallbackCopy(text);
+      showCopied();
+    });
+  } else {
+    fallbackCopy(text);
+    showCopied();
+  }
+});
+
+function fallbackCopy(text) {
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  ta.style.left = '-9999px';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  document.body.removeChild(ta);
 }
 </script>
 
